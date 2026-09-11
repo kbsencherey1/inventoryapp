@@ -1,0 +1,15 @@
+{
+  "name": "inventory-receiving-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-first inventory receiving MVP",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "check": "node --check server.js && node --check src/db.js && node --check src/calculations.js"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

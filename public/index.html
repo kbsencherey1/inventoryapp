@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <!--
+  THESIS: Receiving is a decision desk, not a decorative dashboard; ordered and counted quantities stay side by side until the receiver confirms.
+  OWN-WORLD: Cool slate workspace, paper-white work surface, electric blue action color, compact tabular data, and amber variance cues.
+  STORY: Sign in, find the delivery, count each line, understand variance, then make one explicit inventory-changing confirmation.
+  FIRST VIEWPORT: A slim navigation rail frames the dashboard's receiving queue and four operational metrics; primary actions live at the top right of the work surface.
+  FORM: Operate-mode decision desk, chosen for task scanability over card mosaics; the product's state table is the signature interaction.
+  -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stockroom · Inventory receiving</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div id="toast-region" class="toast-region" aria-live="polite"></div>
+    <section id="auth-view" class="auth-shell">
+      <div class="auth-panel">
+        <div class="brand-mark"><span class="brand-dot"></span><span>stockroom</span></div>
+        <p class="section-label">Inventory receiving</p>
+        <h1>Make every delivery count.</h1>
+        <p class="muted auth-copy">A clear receiving desk for the moments when ordered, counted, and on-hand need to agree.</p>
+        <form id="login-form" class="stack-form">
+          <label>Email<input id="login-email" type="email" value="admin@example.com" required autocomplete="username"></label>
+          <label>Password<input id="login-password" type="password" value="admin123" required autocomplete="current-password"></label>
+          <button class="button button-primary" type="submit">Sign in <span aria-hidden="true">→</span></button>
+          <p id="login-error" class="form-error" role="alert"></p>
+        </form>
+        <p class="fine-print">Local development account · replace before production use</p>
+      </div>
+      <div class="auth-aside">
+        <div class="aside-note"><span class="status-dot status-blue"></span><span>Local-first workspace</span></div>
+        <p>Confirm only when the physical count is in front of you.</p>
+      </div>
+    </section>
+
+    <div id="app-view" class="app-shell hidden">
+      <aside class="sidebar">
+        <div class="brand-mark"><span class="brand-dot"></span><span>stockroom</span></div>
+        <div class="workspace-tag">RECEIVING DESK</div>
+        <nav aria-label="Primary">
+          <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span>Overview</button>
+          <button class="nav-item" data-view="receive"><span class="nav-icon">↓</span>Receive</button>
+          <button class="nav-item" data-view="orders"><span class="nav-icon">≡</span>Purchase orders</button>
+          <button class="nav-item" data-view="products"><span class="nav-icon">□</span>Products</button>
+          <button class="nav-item" data-view="import"><span class="nav-icon">↑</span>Import</button>
+          <button class="nav-item" data-view="history"><span class="nav-icon">↺</span>History</button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="user-chip"><span id="user-initials" class="avatar">A</span><span><strong id="user-email">admin@example.com</strong><small>Administrator</small></span></div>
+          <button id="logout-button" class="logout-button">Sign out</button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button id="mobile-menu" class="icon-button mobile-only" aria-label="Open navigation">☰</button>
+          <div><p id="page-kicker" class="section-label">Today · Receiving desk</p><h2 id="page-title">Overview</h2></div>
+          <div class="topbar-actions"><span class="connection"><span class="status-dot status-green"></span>Local data saved</span><button class="button button-primary" data-view-action="receive">+ Receive delivery</button></div>
+        </header>
+        <div id="view-container" class="view-container"></div>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
